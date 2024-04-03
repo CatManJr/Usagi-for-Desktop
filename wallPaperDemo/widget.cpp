@@ -20,18 +20,18 @@ Widget::Widget(QWidget* parent)
 	, DesktopWidget(new desktopWidget)
 	, clickCount(0)
 {
-	// Set the widget's window title
+	//设置窗口大小
 	setWindowTitle("Usagi for Desktop");
-	// Set the widget's icon
+	//设置窗口图标
 	setWindowIcon(QIcon(":/icon/resouces/icon/icon.png"));
-	// Create a system tray icon
+	//创建托盘图标
 	QSystemTrayIcon* trayIcon = new QSystemTrayIcon(QIcon(":/icon/resouces/icon/icon.png"), this);
-	// Set the system tray icon's tooltip
+	//设置托盘图标提示信息
 	trayIcon->setToolTip("Usagi for Desktop");
-	// Connect the system tray icon's signal to a slot
+	//信号连接托盘图标和点击退出函数
 	connect(trayIcon, &QSystemTrayIcon::activated, this, &Widget::iconActivated);
 
-	// Show the system tray icon
+	//显示托盘图标
 	trayIcon->setVisible(true);
 
 
@@ -66,7 +66,7 @@ Widget::Widget(QWidget* parent)
 	this->installEventFilter(this);
 
 	initButton();
-
+	//同步桌面壁纸
 	DesktopWidget->show();
 }
 
@@ -77,7 +77,7 @@ Widget::~Widget()
 
 void Widget::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
-	// Show the widget when the system tray icon is activated
+	//点击托盘图标退出程序
 	show();
 	if (reason == QSystemTrayIcon::Trigger) {
 		QCoreApplication::instance()->quit();
@@ -163,21 +163,25 @@ bool Widget::eventFilter(QObject* watched, QEvent* ev)
 //初始化按钮
 void Widget::initButton()
 {
+	//关闭按钮
 	closeButton = new QPushButton(this);
 	closeButton->setGeometry(130, 50, 32, 32);
 	closeButton->setObjectName("closeButton");
 	closeButton->setStyleSheet("border-image: url(:/button/resouces/buttons/close.png);");
 
+	//停止跑动按钮
 	cutButton = new QPushButton(this);
 	cutButton->setGeometry(90, 50, 32, 32);
 	cutButton->setObjectName("cutButton");
 	cutButton->setStyleSheet("border-image: url(:/button/resouces/buttons/cut.png);");
 
+	//切换壁纸按钮
 	openButton = new QPushButton(this);
 	openButton->setGeometry(50, 50, 32, 32);
 	openButton->setObjectName("openButton");
 	openButton->setStyleSheet("border-image: url(:/button/resouces/buttons/Switch.png);");
 
+	//鼠标悬停变色样式
 	this->setStyleSheet("QPushButton{background-color:rgb(239, 130, 160); border:none; border-radius:5px;}\
 						 QPushButton#closeButton:hover{background-color:rgb(64, 173, 250);}\
 						 QPushButton#openButton:hover{background-color:rgb(64, 173, 250);}\

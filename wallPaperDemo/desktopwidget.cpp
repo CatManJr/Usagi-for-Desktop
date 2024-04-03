@@ -9,6 +9,7 @@ desktopWidget::desktopWidget(QWidget *parent)
 	: QWidget(parent)
 	, backLabel(new QLabel)
 {
+	//窗体样式
 	setWindowFlags(Qt::FramelessWindowHint);
 	setAttribute(Qt::WA_TranslucentBackground);
 	setWindowState(Qt::WindowMaximized);
@@ -17,6 +18,7 @@ desktopWidget::desktopWidget(QWidget *parent)
 	layout->setContentsMargins(0, 0, 0, 0);
 	layout->addWidget(backLabel);
 
+	//加载壁纸
 	wallpaper.load(":/wallpaper/resouces/wallpapers/1.jpg");
 	QRect screenRect = QGuiApplication::primaryScreen()->geometry();
 	wallpaper = wallpaper.scaled(screenRect.width(), screenRect.height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
@@ -24,7 +26,7 @@ desktopWidget::desktopWidget(QWidget *parent)
 	setWallpaper();
 
 
-
+	//设置父窗口为桌面
 	HWND hwndDesktop = FindWindow(L"Progman", NULL);
 
 	SetParent((HWND)this->winId(), hwndDesktop);
@@ -69,6 +71,7 @@ void desktopWidget::setWallpaper()
 	SetWindowPos((HWND)this->winId(), HWND_BOTTOM, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
 }
 
+//切换壁纸
 void desktopWidget::setPixmap(const QString &filename)
 {
 	if (QPixmap(filename).isNull())
