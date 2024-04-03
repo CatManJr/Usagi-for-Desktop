@@ -19,7 +19,7 @@
   <ItemGroup>
     <ClCompile Include="desktopwidget.cpp" />
     <ClCompile Include="widget.cpp" />
-    <ClCompile Include="源.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="widget.h" />
