@@ -8,7 +8,11 @@
 
 包含了Visual Studio + Qt6.5.3的项目源码，一个绿色版文件夹（较大），一个完全封装的exe包体（可直接下载运行）。
 
-**请注意，壁纸、音效等功能使用的Windows API，建议在Windows系统上玩耍！
+**请注意，壁纸、音效等功能使用了Windows API，建议在Windows系统上玩耍！
+
+
+
+
 
 Simple and interesting desktop small widget, three buttons are used to switch the wallpaper (can be fully user-defined), pause the annoying running of Usagi, and exit the program. 
 
@@ -18,6 +22,6 @@ It is recommended to turn on the system sound to play, which will trigger the "y
 
 **Please note that a click on the wallpaper switch dialogue box pops up, it is recommended to switch, click Cancel or close the dialogue box directly may make the program exit.
 
-The Git includes the project source code of Visual Studio + Qt6.5.3, a green version folder (large)， and a fully packaged exe package (can be downloaded and run directly).
+The Git includes the project source code of Visual Studio + Qt 6.5.3, a green version folder (large)， and a fully packaged exe package (can be downloaded and run directly).
 
-**Please note that the functions of wallpaper, sound and so on use the Windows API, it is recommended to play on the Windows system!
+**Please note that the functions of wallpaper, sound effects and so on are based on the Windows API,  so the author recommended playing on the Windows system!
