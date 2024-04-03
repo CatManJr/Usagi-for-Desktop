@@ -33,7 +33,7 @@ private:
 	QLabel* roleLabel; //角色标签
 
 	QPushButton* closeButton; //关闭按钮
-	QPushButton* cutButton;
+	QPushButton* cutButton; //暂停按钮
 	QPushButton* openButton; //打开路径
 
 	bool isDragging = false; //是否正在拖拽

@@ -59,3 +59,4 @@
 #*.RTF   diff=astextplain
 Usagi[[:space:]]for[[:space:]]Desktop[[:space:]]v1.1.exe filter=lfs diff=lfs merge=lfs -text
 Usagi[[:space:]]for[[:space:]]Desktop[[:space:]]v1.1.exe“ filter=lfs diff=lfs merge=lfs -text
+Usagi[[:space:]]for[[:space:]]Desktop[[:space:]]v1.1.2 filter=lfs diff=lfs merge=lfs -text

@@ -2,7 +2,6 @@
 #include <QHBoxLayout>
 #include <qt_windows.h>
 #include <QDebug>
-#include <iostream>
 #include <QScreen>
 #include <QGuiApplication>
 
@@ -54,7 +53,7 @@ void desktopWidget::setWallpaper()
 		hWorkerW = FindWindowEx(NULL, hWorkerW, L"WorkerW", NULL);
 	}
 
-	ShowWindow(hWorkerW, 0);
+	ShowWindow(hWorkerW, 0); //隐藏WorkerW，需要增加异常抛出
 
 	//找到桌面的句柄
 	HWND desktopHwd = FindWindowW(L"Progman",NULL);
@@ -85,5 +84,4 @@ void desktopWidget::setPixmap(const QString &filename)
 		backLabel->setPixmap(wallpaper);
 		this->showFullScreen();
 	}
-
 }
