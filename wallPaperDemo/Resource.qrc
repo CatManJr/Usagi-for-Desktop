@@ -1,0 +1,75 @@
+<RCC>
+    <qresource prefix="/static">
+        <file>resouces/mainCharacter/usagi/0.png</file>
+        <file>resouces/mainCharacter/usagi/1.png</file>
+        <file>resouces/mainCharacter/usagi/2.png</file>
+        <file>resouces/mainCharacter/usagi/3.png</file>
+        <file>resouces/mainCharacter/usagi/4.png</file>
+        <file>resouces/mainCharacter/usagi/5.png</file>
+        <file>resouces/mainCharacter/usagi/6.png</file>
+        <file>resouces/mainCharacter/usagi/7.png</file>
+        <file>resouces/mainCharacter/usagi/8.png</file>
+        <file>resouces/mainCharacter/usagi/9.png</file>
+        <file>resouces/mainCharacter/usagi/10.png</file>
+        <file>resouces/mainCharacter/usagi/11.png</file>
+        <file>resouces/mainCharacter/usagi/12.png</file>
+        <file>resouces/mainCharacter/usagi/13.png</file>
+        <file>resouces/mainCharacter/usagi/14.png</file>
+        <file>resouces/mainCharacter/usagi/15.png</file>
+        <file>resouces/mainCharacter/usagi/16.png</file>
+        <file>resouces/mainCharacter/usagi/17.png</file>
+        <file>resouces/mainCharacter/usagi/18.png</file>
+        <file>resouces/mainCharacter/usagi/19.png</file>
+        <file>resouces/mainCharacter/usagi/20.png</file>
+        <file>resouces/mainCharacter/usagi/21.png</file>
+        <file>resouces/mainCharacter/usagi/22.png</file>
+        <file>resouces/mainCharacter/usagi/23.png</file>
+        <file>resouces/mainCharacter/usagi/24.png</file>
+        <file>resouces/mainCharacter/usagi/25.png</file>
+        <file>resouces/mainCharacter/usagi/26.png</file>
+        <file>resouces/mainCharacter/usagi/27.png</file>
+        <file>resouces/mainCharacter/usagi/28.png</file>
+        <file>resouces/mainCharacter/usagi/29.png</file>
+        <file>resouces/mainCharacter/usagi/30.png</file>
+        <file>resouces/mainCharacter/usagi/31.png</file>
+        <file>resouces/mainCharacter/usagi/32.png</file>
+        <file>resouces/mainCharacter/usagi/33.png</file>
+        <file>resouces/mainCharacter/usagi/34.png</file>
+        <file>resouces/mainCharacter/usagi/35.png</file>
+        <file>resouces/mainCharacter/usagi/36.png</file>
+        <file>resouces/mainCharacter/usagi/37.png</file>
+        <file>resouces/mainCharacter/usagi/38.png</file>
+        <file>resouces/mainCharacter/usagi/39.png</file>
+        <file>resouces/mainCharacter/usagi/40.png</file>
+        <file>resouces/mainCharacter/usagi/41.png</file>
+        <file>resouces/mainCharacter/usagi/42.png</file>
+    </qresource>
+    <qresource prefix="/drag">
+        <file>resouces/mainCharacter/usagi_drag/1.png</file>
+        <file>resouces/mainCharacter/usagi_drag/2.png</file>
+        <file>resouces/mainCharacter/usagi_drag/3.png</file>
+        <file>resouces/mainCharacter/usagi_drag/4.png</file>
+        <file>resouces/mainCharacter/usagi_drag/5.png</file>
+        <file>resouces/mainCharacter/usagi_drag/6.png</file>
+        <file>resouces/mainCharacter/usagi_drag/7.png</file>
+        <file>resouces/mainCharacter/usagi_drag/8.png</file>
+        <file>resouces/mainCharacter/usagi_drag/0.png</file>
+        <file>resouces/mainCharacter/usagi_drag/9.png</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>resouces/icon/icon.png</file>
+    </qresource>
+    <qresource prefix="/wallpaper">
+        <file>resouces/wallpapers/1.jpg</file>
+        <file>resouces/wallpapers/2.jpg</file>
+    </qresource>
+    <qresource prefix="/music">
+        <file>resouces/music/usagi.wav</file>
+        <file>resouces/music/yiyaha.wav</file>
+    </qresource>
+    <qresource prefix="/button">
+        <file>resouces/buttons/close.png</file>
+        <file>resouces/buttons/cut.png</file>
+        <file>resouces/buttons/Switch.png</file>
+    </qresource>
+</RCC>
