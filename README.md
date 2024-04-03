@@ -1,8 +1,10 @@
 # Usagi for Desktop v1.1.2 release
 ### `v1.1.2 new release: Bug Fixed.`
-Added Microsoft VC required library to run folder and fully encapsulated.exe file to fix internal compatibility issues of Windows system
+Added Microsoft VC required library to run folder and fully encapsulated.exe file to fix internal compatibility issues of Windows system. 
+You can directly download in Release.
 ### `v1.1.2版本更新：修复bug`
-向绿色版本（文件夹）和完全封装的.exe发布版中增加了微软VC运行时的必需库。
+向绿色版本（文件夹）和完全封装的.exe发布版中增加了微软VC运行时的必需库。 
+可以在release界面直接下载.exe包。
 
 
 ### `功能概述/Brief`
