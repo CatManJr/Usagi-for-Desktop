@@ -14,10 +14,10 @@ Simple and interesting desktop small widget, three buttons are used to switch th
 
 The initial wallpaper entrained the author's preferred goods. Sakura Miyawaki, who is an honourable and outstanding female idol born in Japan.
 
-It is recommended to turn on the system sound to play, which will trigger the "yiii——ya——ha！！！" sound effect when starting up, and right-click to trigger Uschi to sing when running. 
+It is recommended to turn on the system sound to play, which will trigger the "yiii——ya——ha！！！" sound effect when starting up, and right-click to trigger Usagi to sing when running. 
 
-* Please note that a click on the wallpaper switch dialogue box pops up, it is recommended to switch, click Cancel or close the dialogue box directly may make the program exit.
+**Please note that a click on the wallpaper switch dialogue box pops up, it is recommended to switch, click Cancel or close the dialogue box directly may make the program exit.
 
 The Git includes the project source code of Visual Studio + Qt6.5.3, a green version folder (large)， and a fully packaged exe package (can be downloaded and run directly).
 
-** Please note that the functions of wallpaper, sound and so on use the Windows API, it is recommended to play on the Windows system!
+**Please note that the functions of wallpaper, sound and so on use the Windows API, it is recommended to play on the Windows system!
