@@ -1,6 +1,11 @@
-# Usagi for Desktop v1.1 release
+# Usagi for Desktop v1.1.2 release
+### `v1.1.2 new release: Bug Fixed.`
+Added Microsoft VC required library to run folder and fully encapsulated.exe file to fix internal compatibility issues of Windows system
+### `v1.1.2版本更新：修复bug`
+向绿色版本（文件夹）和完全封装的.exe发布版中增加了微软VC运行时的必需库。
 
-![](E:\Git\wallPaperDemo\wallPaperDemo\wallPaperDemo\resouces\mainCharacter\usagi\7.png)
+
+### `功能概述/Brief`
 
 简单有趣的桌面小组件，三个按键分别用来切换壁纸（可完全用户自定义）、暂停乌萨奇的烦人跑动、退出程序。左键可拖动到任意位置。
 
