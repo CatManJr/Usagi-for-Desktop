@@ -20,35 +20,35 @@ Widget::Widget(QWidget* parent)
 	, DesktopWidget(new desktopWidget)
 	, clickCount(0)
 {
-	//ÉèÖÃ´°¿Ú´óĞ¡
+	//è®¾ç½®çª—å£å¤§å°
 	setWindowTitle("Usagi for Desktop");
-	//ÉèÖÃ´°¿ÚÍ¼±ê
+	//è®¾ç½®çª—å£å›¾æ ‡
 	setWindowIcon(QIcon(":/icon/resouces/icon/icon.png"));
-	//´´½¨ÍĞÅÌÍ¼±ê
+	//åˆ›å»ºæ‰˜ç›˜å›¾æ ‡
 	QSystemTrayIcon* trayIcon = new QSystemTrayIcon(QIcon(":/icon/resouces/icon/icon.png"), this);
-	//ÉèÖÃÍĞÅÌÍ¼±êÌáÊ¾ĞÅÏ¢
+	//è®¾ç½®æ‰˜ç›˜å›¾æ ‡æç¤ºä¿¡æ¯
 	trayIcon->setToolTip("Usagi for Desktop");
-	//ĞÅºÅÁ¬½ÓÍĞÅÌÍ¼±êºÍµã»÷ÍË³öº¯Êı
+	//ä¿¡å·è¿æ¥æ‰˜ç›˜å›¾æ ‡å’Œç‚¹å‡»é€€å‡ºå‡½æ•°
 	connect(trayIcon, &QSystemTrayIcon::activated, this, &Widget::iconActivated);
 
-	//ÏÔÊ¾ÍĞÅÌÍ¼±ê
+	//æ˜¾ç¤ºæ‰˜ç›˜å›¾æ ‡
 	trayIcon->setVisible(true);
 
 
-	//È¥µô´°¿Ú±ß¿ò²¢Ê¹±³¾°Í¸Ã÷
+	//å»æ‰çª—å£è¾¹æ¡†å¹¶ä½¿èƒŒæ™¯é€æ˜
 	this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool |
-		Qt::WindowType::FramelessWindowHint | Qt::WindowStaysOnTopHint); // È¥µô±êÌâÀ¸,È¥µôÈÎÎñÀ¸ÏÔÊ¾£¬´°¿ÚÖÃ¶¥
+		Qt::WindowType::FramelessWindowHint | Qt::WindowStaysOnTopHint); // å»æ‰æ ‡é¢˜æ ,å»æ‰ä»»åŠ¡æ æ˜¾ç¤ºï¼Œçª—å£ç½®é¡¶
 
 	setAttribute(Qt::WA_TranslucentBackground);
 
-	//¿ª»úÒôĞ§
+	//å¼€æœºéŸ³æ•ˆ
 	QSoundEffect* effect = new QSoundEffect;
 	effect->setSource(QUrl::fromLocalFile(":/music/resouces/music/yiyaha.wav"));
 	effect->setVolume(0.5f);
 	effect->play();
 
 
-	//¶¨Ê±¸üĞÂÖ¡
+	//å®šæ—¶æ›´æ–°å¸§
 	QTimer *updateTimer = new QTimer(this);
 	connect(updateTimer, &QTimer::timeout, this, &Widget::onTimerTimeout);
 	updateTimer->start(500);
@@ -56,7 +56,7 @@ Widget::Widget(QWidget* parent)
 	roleLabel->resize(200, 300);
 
 
-	//´°¿ÚÉèÖÃÒõÓ°
+	//çª—å£è®¾ç½®é˜´å½±
 	QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect(this);
 	shadow->setColor(QColor(230, 231, 232, 220));
 
@@ -66,7 +66,7 @@ Widget::Widget(QWidget* parent)
 	this->installEventFilter(this);
 
 	initButton();
-	//Í¬²½×ÀÃæ±ÚÖ½
+	//åŒæ­¥æ¡Œé¢å£çº¸
 	DesktopWidget->show();
 }
 
@@ -77,23 +77,23 @@ Widget::~Widget()
 
 void Widget::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
-	//µã»÷ÍĞÅÌÍ¼±êÍË³ö³ÌĞò
+	//ç‚¹å‡»æ‰˜ç›˜å›¾æ ‡é€€å‡ºç¨‹åº
 	show();
 	if (reason == QSystemTrayIcon::Trigger) {
 		QCoreApplication::instance()->quit();
 	}
 }
 
-//Í¨¹ıË½ÓĞĞÅºÅÅĞ¶ÏÊÇ·ñĞèÒªÔİÍ£
+//é€šè¿‡ç§æœ‰ä¿¡å·åˆ¤æ–­æ˜¯å¦éœ€è¦æš‚åœ
 void Widget::cutButtonClicked() {
 	clickCount++;
 	if (clickCount % 2 == 0)
-		isPaused = false;  // Èç¹ûµã»÷´ÎÊıÎªÅ¼Êı£¬ÔòisPausedÎªfalse£¬·ñÔòÎªtrue
+		isPaused = false;  // å¦‚æœç‚¹å‡»æ¬¡æ•°ä¸ºå¶æ•°ï¼Œåˆ™isPausedä¸ºfalseï¼Œå¦åˆ™ä¸ºtrue
 	else
 		isPaused = true;
 }
 
-//ÊµÊ±¸üĞÂ½ÇÉ«¶¯»­
+//å®æ—¶æ›´æ–°è§’è‰²åŠ¨ç”»
 void Widget::upateRoleAnimation()
 {
 	QString qss("background-repeat: no-repeat;");
@@ -101,32 +101,32 @@ void Widget::upateRoleAnimation()
 			+ "background-position: center;");
 
 		if (isPaused == false) roleMove();
-		curFrame = (curFrame + 1) % 42; // Ñ­»·±éÀúÏÂÒ»Ö¡
+		curFrame = (curFrame + 1) % 42; // å¾ªç¯éå†ä¸‹ä¸€å¸§
 }
 
-//½ÇÉ«ÍÏ×§ÌØÊâ¶¯»­
+//è§’è‰²æ‹–æ‹½ç‰¹æ®ŠåŠ¨ç”»
 void Widget::roleDrag()
 {
 	QString qss("background-repeat: no-repeat;");
 	roleLabel->setStyleSheet(qss + QString("background-image: url(:/drag/resouces/mainCharacter/usagi_drag/%0.png);").arg(curFrame)\
 		+ "background-position: center;");
-	curFrame = (curFrame + 1) % 8; // Ñ­»·±éÀúÏÂÒ»Ö¡
+	curFrame = (curFrame + 1) % 8; // å¾ªç¯éå†ä¸‹ä¸€å¸§
 }
 
 
-//ÊÂ¼ş¹ıÂËÆ÷
+//äº‹ä»¶è¿‡æ»¤å™¨
 bool Widget::eventFilter(QObject* watched, QEvent* ev)
 {
 	QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(ev);
 
-	//ÅĞ¶ÏÊó±ê×ó¼ü°´ÏÂ
-	static QPoint beginPosition; //±ØĞëÊÇ¾²Ì¬µÄ£¬·ñÔò×Ô¶¯¶¨Î»µ½×óÉÏ½Çs
+	//åˆ¤æ–­é¼ æ ‡å·¦é”®æŒ‰ä¸‹
+	static QPoint beginPosition; //å¿…é¡»æ˜¯é™æ€çš„ï¼Œå¦åˆ™è‡ªåŠ¨å®šä½åˆ°å·¦ä¸Šè§’s
 	if (ev->type() == QEvent::MouseButtonPress)
 	{
 		beginPosition = mouseEvent->globalPos() - this->pos();
 	}
 	
-	//ÅĞ¶ÏÊó±ê×ó¼üÍÏ¶¯
+	//åˆ¤æ–­é¼ æ ‡å·¦é”®æ‹–åŠ¨
 	else if (ev->type() == QEvent::MouseMove && 
 		mouseEvent->buttons() & Qt::MouseButton::LeftButton)
 	{
@@ -139,7 +139,7 @@ bool Widget::eventFilter(QObject* watched, QEvent* ev)
 
 	}
 
-	//ÅĞ¶ÏÊó±êÓÒ¼ü°´ÏÂ
+	//åˆ¤æ–­é¼ æ ‡å³é”®æŒ‰ä¸‹
 	if (ev->type() == QEvent::MouseButtonPress &&
 		mouseEvent->button() == Qt::MouseButton::RightButton)
 	{
@@ -149,49 +149,41 @@ bool Widget::eventFilter(QObject* watched, QEvent* ev)
 		effect->play();
 	}
 
-	// ¼ì²éÊÇ·ñÊÇÍÏÈë¿ÕÎÄ¼ş¼Ğ
-		// ¼ì²éÊÇ·ñÊÇÍÏÈëÎÄ¼ş¼Ğ
-	if (ev->type() == QEvent::DragEnter)
-	{
-		QDragEnterEvent* dragEnterEvent = static_cast<QDragEnterEvent*>(ev);
-		// Ö±½ÓÉèÖÃ isEat Îª true£¬²»ÔÙ¼ì²éÎÄ¼ş¼ĞÊÇ·ñÎª¿Õ
-	}
-
 	return false;
 }
 
-//³õÊ¼»¯°´Å¥
+//åˆå§‹åŒ–æŒ‰é’®
 void Widget::initButton()
 {
-	//¹Ø±Õ°´Å¥
+	//å…³é—­æŒ‰é’®
 	closeButton = new QPushButton(this);
 	closeButton->setGeometry(130, 50, 32, 32);
 	closeButton->setObjectName("closeButton");
 	closeButton->setStyleSheet("border-image: url(:/button/resouces/buttons/close.png);");
 
-	//Í£Ö¹ÅÜ¶¯°´Å¥
+	//åœæ­¢è·‘åŠ¨æŒ‰é’®
 	cutButton = new QPushButton(this);
 	cutButton->setGeometry(90, 50, 32, 32);
 	cutButton->setObjectName("cutButton");
 	cutButton->setStyleSheet("border-image: url(:/button/resouces/buttons/cut.png);");
 
-	//ÇĞ»»±ÚÖ½°´Å¥
+	//åˆ‡æ¢å£çº¸æŒ‰é’®
 	openButton = new QPushButton(this);
 	openButton->setGeometry(50, 50, 32, 32);
 	openButton->setObjectName("openButton");
 	openButton->setStyleSheet("border-image: url(:/button/resouces/buttons/Switch.png);");
 
-	//Êó±êĞüÍ£±äÉ«ÑùÊ½
+	//é¼ æ ‡æ‚¬åœå˜è‰²æ ·å¼
 	this->setStyleSheet("QPushButton{background-color:rgb(239, 130, 160); border:none; border-radius:5px;}\
 						 QPushButton#closeButton:hover{background-color:rgb(64, 173, 250);}\
 						 QPushButton#openButton:hover{background-color:rgb(64, 173, 250);}\
 						 QPushButton#cutButton:hover{background-color:rgb(64, 173, 250);}");
 
 
-	connect(closeButton, &QPushButton::pressed, this, &Widget::close); //¹Ø±Õ´°¿ÚĞÅºÅÌõ
-	connect(closeButton, &QPushButton::pressed, qApp, &QApplication::quit); //¹Ø±Õ³ÌĞòĞÅºÅÌõ
+	connect(closeButton, &QPushButton::pressed, this, &Widget::close); //å…³é—­çª—å£ä¿¡å·æ¡
+	connect(closeButton, &QPushButton::pressed, qApp, &QApplication::quit); //å…³é—­ç¨‹åºä¿¡å·æ¡
 
-	connect(cutButton, &QPushButton::pressed, this, &Widget::cutButtonClicked); //ÔİÍ£ÅÜ¶¯ĞÅºÅÌõ
+	connect(cutButton, &QPushButton::pressed, this, &Widget::cutButtonClicked); //æš‚åœè·‘åŠ¨ä¿¡å·æ¡
 
 	connect(openButton, &QPushButton::pressed, this, [=]()
 		{
@@ -205,11 +197,11 @@ void Widget::initButton()
 			{
 				DesktopWidget->setPixmap(filename);
 			}
-		});//ÇĞ»»±ÚÖ½ĞÅºÅÌõ
+		});//åˆ‡æ¢å£çº¸ä¿¡å·æ¡
 
 }
 
-//¶¨Ê±Æ÷ĞÅºÅÑ¡ÔñÆ÷
+//å®šæ—¶å™¨ä¿¡å·é€‰æ‹©å™¨
 void Widget::onTimerTimeout()
 {
 	if (isDragging)
@@ -222,7 +214,7 @@ void Widget::onTimerTimeout()
 	}
 }
 
-//½ÇÉ«ÒÆ¶¯
+//è§’è‰²ç§»åŠ¨
 void Widget::roleMove()
 {
 	if (curFrame >= 1 && curFrame <= 4 || curFrame > 30 && curFrame <= 32 || curFrame > 39 && curFrame <= 41) {
