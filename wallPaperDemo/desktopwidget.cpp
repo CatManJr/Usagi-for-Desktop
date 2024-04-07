@@ -9,7 +9,7 @@ desktopWidget::desktopWidget(QWidget *parent)
 	: QWidget(parent)
 	, backLabel(new QLabel)
 {
-	//´°ÌåÑùÊ½
+	//çª—ä½“æ ·å¼
 	setWindowFlags(Qt::FramelessWindowHint);
 	setAttribute(Qt::WA_TranslucentBackground);
 	setWindowState(Qt::WindowMaximized);
@@ -18,19 +18,11 @@ desktopWidget::desktopWidget(QWidget *parent)
 	layout->setContentsMargins(0, 0, 0, 0);
 	layout->addWidget(backLabel);
 
-	//¼ÓÔØ±ÚÖ½
+	//åŠ è½½å£çº¸
 	wallpaper.load(":/wallpaper/resouces/wallpapers/1.jpg");
 	QRect screenRect = QGuiApplication::primaryScreen()->geometry();
 	wallpaper = wallpaper.scaled(screenRect.width(), screenRect.height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
 	backLabel->setPixmap(wallpaper);
-	setWallpaper();
-
-
-	//ÉèÖÃ¸¸´°¿ÚÎª×ÀÃæ
-	HWND hwndDesktop = FindWindow(L"Progman", NULL);
-
-	SetParent((HWND)this->winId(), hwndDesktop);
-	
 	setWallpaper();
 
 }
@@ -55,9 +47,9 @@ void desktopWidget::setWallpaper()
 		hWorkerW = FindWindowEx(NULL, hWorkerW, L"WorkerW", NULL);
 	}
 
-	ShowWindow(hWorkerW, 0); //Òş²ØWorkerW£¬ĞèÒªÔö¼ÓÒì³£Å×³ö
+	ShowWindow(hWorkerW, 0); //éšè—WorkerWï¼Œéœ€è¦å¢åŠ å¼‚å¸¸æŠ›å‡º
 
-	//ÕÒµ½×ÀÃæµÄ¾ä±ú
+	//æ‰¾åˆ°æ¡Œé¢çš„å¥æŸ„
 	HWND desktopHwd = FindWindowW(L"Progman",NULL);
 	if (!desktopHwd)
 	{
@@ -65,13 +57,13 @@ void desktopWidget::setWallpaper()
 		return;
 	}
 	//std::cout << "desktopHwd: " << desktopHwd << std::endl;
-	//°ÑthisµÄ¾ä±úÉèÖÃÎª×ÀÃæµÄ×Ó´°¿Ú
+	//æŠŠthisçš„å¥æŸ„è®¾ç½®ä¸ºæ¡Œé¢çš„å­çª—å£
 	SetParent((HWND)this->winId(), desktopHwd);
-	// ÉèÖÃ´°¿ÚµÄZ¶©µ¥Îªµ×²¿
+	// è®¾ç½®çª—å£çš„Zè®¢å•ä¸ºåº•éƒ¨
 	SetWindowPos((HWND)this->winId(), HWND_BOTTOM, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
 }
 
-//ÇĞ»»±ÚÖ½
+//åˆ‡æ¢å£çº¸
 void desktopWidget::setPixmap(const QString &filename)
 {
 	if (QPixmap(filename).isNull())
